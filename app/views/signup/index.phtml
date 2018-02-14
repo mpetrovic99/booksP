@@ -1,0 +1,17 @@
+
+<h2>Registracija</h2>
+
+<?php
+//echo $this->flashSession->output();
+echo $this->tag->form('signup/index');
+echo $form->get("name")->render();
+echo $form->get("surname")->render();
+echo $form->get("email")->render();
+echo $form->get("username")->render();
+echo $form->get("password")->render();
+echo $form->get("groupId")->render();
+echo $form->get("submit")->render();
+
+?>
+
+

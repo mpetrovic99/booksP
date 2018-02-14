@@ -1,0 +1,9 @@
+<h2>Prijava</h2>
+<?php
+//echo $this->flashSession->output();
+echo $this->tag->form('login/index');
+echo $form->get("username")->render();
+echo $form->get("password")->render();
+echo $form->get("submit")->render();
+
+?>

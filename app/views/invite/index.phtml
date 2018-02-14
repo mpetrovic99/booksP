@@ -1,0 +1,20 @@
+<h2>Pozovi korisnika</h2>
+<?php //echo (extension_loaded('openssl')?'SSL loaded':'SSL not loaded')."\n"; ?>
+<?php
+echo $this->tag->form('invite/index');
+echo $form->get("email")->render();
+echo "Odaberite grupu";
+echo $form->get("nameG")->render();
+echo $form->get("submit")->render();
+echo $this->tag->endform();
+
+
+?>
+<hr>
+<h2>Dodajte novu grupu </h2>
+<?php
+
+echo $this->tag->form('invite/index');
+echo $fa->get("nameG")->render();
+echo $fa->get("submit")->render();
+echo $this->tag->endform();

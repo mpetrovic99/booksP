@@ -1,0 +1,17 @@
+<h2>Moje knjige</h2>
+<?php
+
+echo $this->tag->form('mybooks/index');
+echo $form->get("mjesec")->render();
+echo $form->get("godina")->render();
+echo $form->get("submit")->render();
+echo "<br>";
+echo "<hr>";
+foreach ($books as $book) {
+    echo "<b>Naziv: </b><b style='color:red'>" .$book->booksb->nameBo. "</b><br>";
+    echo "<b>Autor: </b>" .$book->booksb->authorBo. "<br>";
+    echo "<b>Opis: </b><textarea readonly style='border:0'>" .$book->booksb->descriptionBo. "</textarea><br>";
+    echo "<b>Rang: </b><b>" .$book->ratingsB->ratingR. "</b><br>";
+    echo "<hr>";
+
+}

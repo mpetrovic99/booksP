@@ -1,0 +1,7 @@
+SELECT `Booksb`.`id` AS `_Booksb_id`, `Booksb`.`nameBo` AS `_Booksb_nameBo`, `Booksb`.`authorBo` AS `_Booksb_authorBo`, `Booksb`.`descriptionBo`
+AS `_Booksb_descriptionBo`, `Booksb`.`idUserBo` AS `_Booksb_idUserBo`, `Booksb`.`dateB` AS `_Booksb_dateB`, `RatingsB`.`id` AS `_RatingsB_id`,
+`RatingsB`.`userIdR` AS `_RatingsB_userIdR`, `RatingsB`.`ratingR` AS `_RatingsB_ratingR`, `RatingsB`.`bookIdR` AS `_RatingsB_bookIdR`, `Usersb`.`id`
+AS `_Usersb_id`, `Usersb`.`username` AS `_Usersb_username`, `Usersb`.`email` AS `_Usersb_email`, `Usersb`.`name` AS `_Usersb_name`, `Usersb`.`surname`
+AS `_Usersb_surname`, `Usersb`.`password` AS `_Usersb_password`, `Usersb`.`groupId` AS `_Usersb_groupId` FROM `usersb` AS `Usersb` LEFT JOIN `ratingsb`
+AS `RatingsB` ON `RatingsB`.`BookIdR` = `Booksb`.`id` LEFT JOIN `booksb` AS `Booksb` ON `Booksb`.`idUserBo` = `Usersb`.`id`
+WHERE `RatingsB`.`userIdR` = 32 AND MONTH(`Booksb`.`dateB`) = 1 AND YEAR(`Booksb`.`dateB`) = 2018 ORDER BY `RatingsB`.`ratingR` DESC

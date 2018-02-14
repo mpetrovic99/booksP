@@ -1,0 +1,26 @@
+<h2>Dodaj knjigu</h2>
+<?php
+echo '<script>
+    $(document).ready(function() {
+        $("#nameBo").autocomplete({
+            source: [
+                 '.$auto1.'
+            ],
+            minLength: 1
+        });
+    });
+</script>';
+//echo $this->flashSession->output();
+echo $this->tag->form('addbooks/index');
+
+echo $form->get("nameBo")->render();
+echo $form->get("authorBo")->render();
+echo $form->get("descriptionBo")->render();
+echo $form->get("idUserBo")->render();
+echo $form->get("dateB")->render();
+echo "Rangiraj knjigu: ";
+echo $form->get("ratingR")->render();
+echo $form->get("submit")->render();
+
+
+?>

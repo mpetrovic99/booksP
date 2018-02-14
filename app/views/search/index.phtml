@@ -1,0 +1,47 @@
+<?php
+use Phalcon\Mvc\Model;
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
+?>
+
+<form action="search" method="get" autocomplete="off">
+    <label>Tražilica
+    <input type="text" name="q">
+    </label>
+    <input type="submit" value="Pretraži">
+</form>
+
+<?php
+
+if(isset($_GET['q'])){
+    $q = $_GET['q'];
+$params = [
+    'index' => 'books',
+    'type' => 'Booksb',
+    'body' => [
+        'query' => [
+            'match' => [
+                'nameBo' => "$q"
+            ]
+        ]
+    ]
+];
+
+    $elastic = \Phalcon\Di::getDefault()->get('elasticsearch');
+    $el = $elastic->search($params);
+    //print_r($el);
+
+
+        foreach($el as $r){
+            echo "1 ";
+            print_r(json_encode($el['fields']));
+        }
+
+
+
+}
+
